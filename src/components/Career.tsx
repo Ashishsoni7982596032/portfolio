@@ -27,7 +27,7 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Senior cloud operations engineer</h4>
+                <h4>Senior Cloud Operations Engineer</h4>
                 <h5>cloudxchange.io</h5>
               </div>
               <h3>Apr 2021 - Jul 2022</h3>
@@ -39,7 +39,7 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>senior cloud engineer</h4>
+                <h4>Senior Cloud Engineer</h4>
                 <h5>TO THE NEW</h5>
               </div>
               <h3>Jul 2022 - Present</h3>
