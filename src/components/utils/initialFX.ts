@@ -1,9 +1,8 @@
-<<<<<<< HEAD
+
 // @ts-ignore
 import SplitText from "gsap-trial/SplitText";
-=======
 import { SplitText } from "gsap/SplitText";
->>>>>>> d1426d2 (fix: migrate from gsap-trial to gsap)
+(fix: migrate from gsap-trial to gsap)
 import gsap from "gsap";
 import { smoother } from "../Navbar";
 
