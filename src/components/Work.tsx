@@ -5,34 +5,39 @@ import { MdArrowBack, MdArrowForward } from "react-icons/md";
 
 const projects = [
   {
-    title: "Solid Starters",
-    category: "Low-Code Platform",
-    tools: "Angular, Next.js, NestJS, MongoDB",
-    image: "/images/Solidx.png",
+    title: "Concealed Coalition & American Service Pets",
+    category: "E-Commerce / SAAS",
+    description: "Built, deployed, and managed cloud-based solutions using the latest technologies including AWS EKS, GitOps, Terraform, ArgoCD, Prometheus, and Grafana.",
+    tools: "AWS Cloud, Kubernetes, ECS, Docker, Terraform, GitOps, ArgoCD, Grafana and Prometheus, DataDog, UptimeRobot, etc.",
+    image: "/images/americanservicepets.png?v=2",
   },
   {
-    title: "Radix",
-    category: "E-Commerce",
-    tools: "Angular, Next.js, NestJS, CMS",
-    image: "/images/radix.png",
+    title: "HDFC Mutual Fund",
+    category: "Financial Services",
+    description: "Built, deployed, and managed cloud-based solutions using the latest technologies including AWS EKS, GitOps, Terraform, ArgoCD, Prometheus, and Grafana.",
+    tools: "AWS & Azure Cloud (Hybrid), Amazon Elastic Kubernetes Service (Amazon EKS) and Azure Kubernetes Service (AKS), ECS, Docker, Site24X7, BMC Remedy, etc.",
+    image: "/images/hdfc.png?v=3",
   },
   {
-    title: "Bond Cancellation",
-    category: "Import-Export Automation",
-    tools: "Angular, Next.js, NestJS, Workflows",
-    image: "/images/bond.png",
+    title: "Kotak Mahindra Bank",
+    category: "Enterprise Banking",
+    description: "Built, deployed, and managed cloud-based solutions using the latest technologies including AWS EKS, GitOps, Terraform, ArgoCD, Prometheus, and Grafana.",
+    tools: "AWS & Azure Cloud (Hybrid), Amazon Elastic Kubernetes Service (Amazon EKS) and Azure Kubernetes Service (AKS), ECS, Docker, Site24X7, BMC Remedy, etc.",
+    image: "/images/kotak.png?v=3",
   },
   {
-    title: "Sapphire",
-    category: "CRM Platform",
-    tools: "AngularJS, NestJS, PostgreSQL",
-    image: "/images/sapphire.png",
+    title: "Tata Motors",
+    category: "Automotive Enterprise",
+    description: "Built, deployed, and managed cloud-based solutions using the latest technologies including AWS EKS, GitOps, Terraform, ArgoCD, Prometheus, and Grafana.",
+    tools: "AWS & Azure Cloud (Hybrid), Amazon Elastic Kubernetes Service (Amazon EKS) and Azure Kubernetes Service (AKS), ECS, Docker, Site24X7, BMC Remedy, etc.",
+    image: "/images/tata.png?v=3",
   },
   {
-    title: "Mpro",
-    category: "Insurance Platform",
-    tools: "React.js, Node.js, Microservices",
-    image: "/images/Maxlife.png",
+    title: "Growthsource",
+    category: "Fintech Platform",
+    description: "Built, deployed, and managed cloud-based solutions using the latest technologies including AWS EKS, GitOps, Terraform, ArgoCD, Prometheus, and Grafana.",
+    tools: "AWS Cloud, ECS, EC2, Jenkins, Site24X7",
+    image: "/images/growthsource.png?v=3",
   },
 ];
 
@@ -108,9 +113,12 @@ const Work = () => {
                         <p className="carousel-category">
                           {project.category}
                         </p>
+                        <p style={{ marginTop: '15px', color: '#d1d1d1', fontSize: '15.5px', fontWeight: 300, lineHeight: 1.6 }}>
+                          {project.description}
+                        </p>
                         <div className="carousel-tools">
-                          <span className="tools-label">Tools & Features</span>
-                          <p>{project.tools}</p>
+                          <span className="tools-label">Technologies</span>
+                          <p style={{ lineHeight: 1.5 }}>{project.tools}</p>
                         </div>
                       </div>
                     </div>

@@ -11,18 +11,16 @@ import {
   RapierRigidBody,
 } from "@react-three/rapier";
 
-const textureLoader = new THREE.TextureLoader();
-const imageUrls = [
-  "/images/react2.webp",
-  "/images/next2.webp",
-  "/images/node2.webp",
-  "/images/express.webp",
-  "/images/mongo.webp",
-  "/images/mysql.webp",
-  "/images/typescript.webp",
-  "/images/javascript.webp",
+const techUrls = [
+  "/tech/amazonwebservices-original-wordmark.svg",
+  "/tech/kubernetes-plain.svg",
+  "/tech/terraform-original.svg",
+  "/tech/docker-original.svg",
+  "/tech/argocd-plain.svg",
+  "/tech/jenkins-original.svg",
+  "/tech/prometheus-original.svg",
+  "/tech/grafana-original.svg",
 ];
-const textures = imageUrls.map((url) => textureLoader.load(url));
 
 const sphereGeometry = new THREE.SphereGeometry(1, 28, 28);
 
@@ -152,18 +150,19 @@ const TechStack = () => {
     };
   }, []);
   const materials = useMemo(() => {
-    return textures.map(
-      (texture) =>
-        new THREE.MeshPhysicalMaterial({
-          map: texture,
-          emissive: "#ffffff",
-          emissiveMap: texture,
-          emissiveIntensity: 0.3,
-          metalness: 0.5,
-          roughness: 1,
-          clearcoat: 0.1,
-        })
-    );
+    const loader = new THREE.TextureLoader();
+    return techUrls.map((url) => {
+      const texture = loader.load(url);
+      texture.colorSpace = THREE.SRGBColorSpace;
+      
+      return new THREE.MeshPhysicalMaterial({
+        map: texture,
+        color: "#ffffff",
+        roughness: 0.2,
+        metalness: 0.1,
+        clearcoat: 0.8,
+      });
+    });
   }, []);
 
   return (
@@ -193,7 +192,7 @@ const TechStack = () => {
             <SphereGeo
               key={i}
               {...props}
-              material={materials[Math.floor(Math.random() * materials.length)]}
+              material={materials[i % materials.length]}
               isActive={isActive}
             />
           ))}

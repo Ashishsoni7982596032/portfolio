@@ -87,22 +87,21 @@ const WhatIDo = () => {
             <div className="what-corner"></div>
 
             <div className="what-content-in">
-              <h3>FRONTEND</h3>
-              <h4>Building Interactive UIs</h4>
+              <h3>CLOUD / AWS</h3>
+              <h4>Scalable Cloud Architecture</h4>
               <p>
-                Crafting performant, responsive interfaces with modern frameworks.
-                From SPAs to micro-frontends, I deliver pixel-perfect experiences.
+                Design and operate scalable, secure AWS infrastructure. Build and manage Kubernetes (EKS) platforms for containerized applications with a strong focus on cost efficiency and high availability.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">React.js</div>
-                <div className="what-tags">Angular</div>
-                <div className="what-tags">Next.js</div>
-                <div className="what-tags">TypeScript</div>
-                <div className="what-tags">JavaScript</div>
-                <div className="what-tags">Material UI</div>
-                <div className="what-tags">HTML5</div>
-                <div className="what-tags">CSS3</div>
+                <div className="what-tags">AWS EC2/S3/RDS</div>
+                <div className="what-tags">EKS / ECS</div>
+                <div className="what-tags">Terraform</div>
+                <div className="what-tags">VPC & IAM</div>
+                <div className="what-tags">CloudFront</div>
+                <div className="what-tags">Route 53</div>
+                <div className="what-tags">Lambda</div>
+                <div className="what-tags">CloudWatch</div>
               </div>
               <div className="what-arrow"></div>
             </div>
@@ -126,22 +125,21 @@ const WhatIDo = () => {
             </div>
             <div className="what-corner"></div>
             <div className="what-content-in">
-              <h3>BACKEND</h3>
-              <h4>Scalable Server Architecture</h4>
+              <h3>DEVOPS & CI/CD</h3>
+              <h4>Automation & Reliability</h4>
               <p>
-                Designing robust APIs and microservices. From CMS platforms to
-                complex business logic, I build backends that scale.
+                Implement GitOps workflows leveraging ArgoCD. Develop fast, reliable CI/CD pipelines, lead zero-downtime migrations, and configure advanced observability systems. Champion the automation of manual operational tasks and actively drive AI adoption across automation workflows to maximize engineering velocity and system resilience.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">Node.js</div>
-                <div className="what-tags">NestJS</div>
-                <div className="what-tags">Express.js</div>
-                <div className="what-tags">MongoDB</div>
-                <div className="what-tags">PostgreSQL</div>
-                <div className="what-tags">REST APIs</div>
-                <div className="what-tags">Microservices</div>
-                <div className="what-tags">Python</div>
+                <div className="what-tags">Kubernetes</div>
+                <div className="what-tags">Docker</div>
+                <div className="what-tags">ArgoCD</div>
+                <div className="what-tags">GitLab CI/CD</div>
+                <div className="what-tags">Jenkins</div>
+                <div className="what-tags">Prometheus</div>
+                <div className="what-tags">Grafana</div>
+                <div className="what-tags">Python / Bash</div>
               </div>
               <div className="what-arrow"></div>
             </div>

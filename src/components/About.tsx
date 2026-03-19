@@ -6,11 +6,7 @@ const About = () => {
       <div className="about-me">
         <h3 className="title">About Me</h3>
         <p className="para">
-          Full Stack Developer with 4+ years of experience building scalable web
-          applications using React.js, Angular, Next.js, Node.js, and NestJS. Skilled
-          in microservices architecture, CMS development, and low-code platforms.
-          Passionate about creating high-performance, production-ready solutions
-          from concept to deployment.
+          Senior DevOps / Cloud Engineer with 6+ years of experience building and operating scalable, secure, and highly available AWS platforms in production. Specialized in Kubernetes (EKS), Terraform (IaC), CI/CD automation, and GitOps (ArgoCD), with a strong focus on performance, reliability, and cost optimization. Proven track record of reducing infrastructure costs by 30–40% and maintaining 99.9%+ availability.
         </p>
       </div>
     </div>

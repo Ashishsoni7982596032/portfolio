@@ -1,0 +1,11 @@
+const fs = require('fs');
+const crypto = require('crypto');
+const password = "MyCharacter12";
+const key = crypto.createHash("sha256").update(password).digest();
+const input = fs.readFileSync('/Users/ashishsoni/Desktop/portf/ashish-portfolio/public/models/character.enc');
+const iv = input.slice(0, 16);
+const data = input.slice(16);
+const decipher = crypto.createDecipheriv("aes-256-cbc", key, iv);
+let decrypted = decipher.update(data);
+decrypted = Buffer.concat([decrypted, decipher.final()]);
+fs.writeFileSync('/Users/ashishsoni/Desktop/portf/ashish-portfolio/public/models/decrypted_character.glb', decrypted);

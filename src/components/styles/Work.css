@@ -42,6 +42,8 @@
 
 .carousel-slide {
   min-width: 100%;
+  width: 100%;
+  max-width: 100%;
   flex-shrink: 0;
   box-sizing: border-box;
   padding: 50px 0;
@@ -56,6 +58,7 @@
 
 .carousel-info {
   flex: 1;
+  min-width: 0;
   display: flex;
   gap: 30px;
   align-items: flex-start;
@@ -109,6 +112,7 @@
 
 .carousel-image-wrapper {
   flex: 1;
+  min-width: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -189,6 +193,8 @@
 
 .work-image-in {
   position: relative;
+  display: block;
+  width: 100%;
 }
 
 .work-link {
@@ -228,8 +234,10 @@
 }
 
 .work-image img {
-  max-width: 100%;
+  width: 100%;
+  height: auto;
   max-height: 400px;
+  object-fit: contain;
   border-radius: 8px;
 }
 
