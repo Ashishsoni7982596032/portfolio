@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import "./styles/Work.css";
 import WorkImage from "./WorkImage";
 import { MdArrowBack, MdArrowForward } from "react-icons/md";
@@ -44,6 +44,7 @@ const projects = [
 const Work = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const carouselRef = useRef<HTMLDivElement>(null);
 
   const goToSlide = useCallback(
     (index: number) => {
@@ -67,6 +68,42 @@ const Work = () => {
     goToSlide(newIndex);
   }, [currentIndex, goToSlide]);
 
+  // Handle mouse wheel scroll
+  useEffect(() => {
+    const handleWheel = (e: WheelEvent) => {
+      const carousel = carouselRef.current;
+      if (!carousel) return;
+
+      // Check if user is scrolling over the carousel
+      const rect = carousel.getBoundingClientRect();
+      const isOverCarousel =
+        e.clientX >= rect.left &&
+        e.clientX <= rect.right &&
+        e.clientY >= rect.top &&
+        e.clientY <= rect.bottom;
+
+      if (!isOverCarousel) return;
+
+      e.preventDefault();
+      if (e.deltaY > 0) {
+        goToNext();
+      } else if (e.deltaY < 0) {
+        goToPrev();
+      }
+    };
+
+    const carousel = carouselRef.current;
+    if (carousel) {
+      carousel.addEventListener("wheel", handleWheel, { passive: false });
+    }
+
+    return () => {
+      if (carousel) {
+        carousel.removeEventListener("wheel", handleWheel);
+      }
+    };
+  }, [goToNext, goToPrev]);
+
   return (
     <div className="work-section" id="work">
       <div className="work-container section-container">
@@ -74,7 +111,7 @@ const Work = () => {
           My <span>Work</span>
         </h2>
 
-        <div className="carousel-wrapper">
+        <div className="carousel-wrapper" ref={carouselRef}>
           {/* Navigation Arrows */}
           <button
             className="carousel-arrow carousel-arrow-left"

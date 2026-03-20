@@ -18,12 +18,23 @@ const Scene = () => {
   const hoverDivRef = useRef<HTMLDivElement>(null);
   const sceneRef = useRef(new THREE.Scene());
   const { setLoading } = useLoading();
+  const sceneInitialized = useRef(false);
 
   const [character, setChar] = useState<THREE.Object3D | null>(null);
   useEffect(() => {
-    if (canvasDiv.current) {
-      let rect = canvasDiv.current.getBoundingClientRect();
+    if (sceneInitialized.current || !canvasDiv.current) return;
+    
+    // Delay to ensure DOM is fully laid out
+    const timer = setTimeout(() => {
+      if (sceneInitialized.current || !canvasDiv.current) return;
+      sceneInitialized.current = true;
+
+      let rect = canvasDiv.current!.getBoundingClientRect();
       let container = { width: rect.width, height: rect.height };
+      
+      // Skip if dimensions are 0
+      if (container.width === 0 || container.height === 0) return;
+      
       const aspect = container.width / container.height;
       const scene = sceneRef.current;
 
@@ -35,7 +46,7 @@ const Scene = () => {
       renderer.setPixelRatio(window.devicePixelRatio);
       renderer.toneMapping = THREE.ACESFilmicToneMapping;
       renderer.toneMappingExposure = 1;
-      canvasDiv.current.appendChild(renderer.domElement);
+      canvasDiv.current!.appendChild(renderer.domElement);
 
       const camera = new THREE.PerspectiveCamera(14.5, aspect, 0.1, 1000);
       camera.position.z = 10;
@@ -142,7 +153,9 @@ const Scene = () => {
           landingDiv.removeEventListener("touchend", onTouchEnd);
         }
       };
-    }
+    }, 100); // Delay 100ms to let DOM layout
+    
+    return () => clearTimeout(timer);
   }, []);
 
   return (
